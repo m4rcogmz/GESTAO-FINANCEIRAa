@@ -1,0 +1,39 @@
+/* Admin — extensões do design system (estatísticas, tabelas admin) */
+
+.admin-stat-card {
+    border-radius: var(--radius-lg);
+    background: var(--surface-1);
+    border: 1px solid var(--border-subtle);
+    padding: 1.25rem 1.35rem;
+    height: 100%;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.admin-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+    border-color: var(--border-strong);
+}
+
+.admin-stat-card .label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-tertiary);
+}
+
+.admin-stat-card .value {
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+    line-height: 1.2;
+}
+
+.navbar-logo-site {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}

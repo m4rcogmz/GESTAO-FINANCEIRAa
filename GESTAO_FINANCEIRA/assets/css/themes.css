@@ -1,0 +1,308 @@
+/* ============================================================
+   GESTÃO FINANCEIRA — Design tokens (temas sincronizados)
+   Paleta inspirada em dashboards SaaS / fintech (Linear, Stripe)
+   Variáveis semânticas + aliases legados (--primary-color, etc.)
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --radius-xs: 6px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-2xl: 24px;
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ------------------------------------------------------------
+   TEMA DARK (predefinido)
+   ------------------------------------------------------------ */
+body.theme-dark {
+    --app-bg: #09090b;
+    --app-bg-elevated: #0c0c0f;
+    --surface-1: rgba(24, 24, 27, 0.72);
+    --surface-2: rgba(39, 39, 42, 0.55);
+    --surface-glass: rgba(255, 255, 255, 0.04);
+    --sidebar-bg: rgba(9, 9, 11, 0.85);
+    --topbar-bg: rgba(9, 9, 11, 0.72);
+    --text-primary: #fafafa;
+    --text-secondary: #a1a1aa;
+    --text-tertiary: #71717a;
+    --heading-color: #f4f4f5;
+    --accent: #22d3ee;
+    --accent-hover: #67e8f9;
+    --accent-muted: rgba(34, 211, 238, 0.14);
+    --accent-foreground: #0a0a0a;
+    --accent-ring: rgba(34, 211, 238, 0.35);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.12);
+    --sidebar-border: rgba(255, 255, 255, 0.06);
+    --nav-hover-bg: rgba(255, 255, 255, 0.06);
+    --nav-active-bg: rgba(34, 211, 238, 0.12);
+    --success: #34d399;
+    --warning: #fbbf24;
+    --danger: #f87171;
+    --chart-1: #22d3ee;
+    --chart-2: #a78bfa;
+    --chart-3: #34d399;
+    --chart-4: #fbbf24;
+    --chart-5: #fb7185;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 24px 48px rgba(0, 0, 0, 0.45);
+    --shadow-glow: 0 0 0 1px rgba(34, 211, 238, 0.12), 0 12px 40px rgba(34, 211, 238, 0.08);
+    --app-bg-mesh:
+        radial-gradient(ellipse 120% 80% at 0% -20%, rgba(34, 211, 238, 0.12), transparent 50%),
+        radial-gradient(ellipse 100% 60% at 100% 0%, rgba(167, 139, 250, 0.08), transparent 45%),
+        radial-gradient(ellipse 80% 50% at 50% 100%, rgba(52, 211, 153, 0.05), transparent 40%);
+    /* Aliases legados (código PHP/CSS antigo) */
+    --bg-color: var(--app-bg);
+    --card-color: var(--surface-1);
+    --text-color: var(--text-primary);
+    --text-muted: var(--text-secondary);
+    --primary-color: var(--accent);
+    --border-color: var(--border-subtle);
+    --hover-color: var(--nav-hover-bg);
+    --success-color: var(--success);
+    --warning-color: var(--warning);
+    --danger-color: var(--danger);
+    --navbar-bg: var(--topbar-bg);
+    --navbar-text: var(--text-primary);
+}
+
+/* ------------------------------------------------------------
+   TEMA LIGHT
+   ------------------------------------------------------------ */
+body.theme-light {
+    --app-bg: #f4f4f5;
+    --app-bg-elevated: #ffffff;
+    --surface-1: #ffffff;
+    --surface-2: #f4f4f5;
+    --surface-glass: rgba(255, 255, 255, 0.85);
+    --sidebar-bg: rgba(255, 255, 255, 0.92);
+    --topbar-bg: rgba(255, 255, 255, 0.88);
+    --text-primary: #18181b;
+    --text-secondary: #52525b;
+    --text-tertiary: #a1a1aa;
+    --heading-color: #09090b;
+    --accent: #0284c7;
+    --accent-hover: #0369a1;
+    --accent-muted: rgba(2, 132, 199, 0.12);
+    --accent-foreground: #ffffff;
+    --accent-ring: rgba(2, 132, 199, 0.25);
+    --border-subtle: #e4e4e7;
+    --border-strong: #d4d4d8;
+    --sidebar-border: #e4e4e7;
+    --nav-hover-bg: rgba(2, 132, 199, 0.06);
+    --nav-active-bg: rgba(2, 132, 199, 0.1);
+    --success: #059669;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --chart-1: #0284c7;
+    --chart-2: #7c3aed;
+    --chart-3: #059669;
+    --chart-4: #d97706;
+    --chart-5: #e11d48;
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 24px 48px rgba(15, 23, 42, 0.12);
+    --shadow-glow: 0 0 0 1px rgba(2, 132, 199, 0.08), 0 12px 32px rgba(2, 132, 199, 0.06);
+    --app-bg-mesh:
+        radial-gradient(ellipse 100% 80% at 0% 0%, rgba(2, 132, 199, 0.06), transparent 50%),
+        radial-gradient(ellipse 80% 60% at 100% 10%, rgba(124, 58, 237, 0.05), transparent 45%);
+    --bg-color: var(--app-bg);
+    --card-color: var(--surface-1);
+    --text-color: var(--text-primary);
+    --text-muted: var(--text-secondary);
+    --primary-color: var(--accent);
+    --border-color: var(--border-subtle);
+    --hover-color: var(--nav-hover-bg);
+    --success-color: var(--success);
+    --warning-color: var(--warning);
+    --danger-color: var(--danger);
+    --navbar-bg: var(--topbar-bg);
+    --navbar-text: var(--text-primary);
+}
+
+/* ------------------------------------------------------------
+   TEMA PURPLE
+   ------------------------------------------------------------ */
+body.theme-purple {
+    --app-bg: #0f0518;
+    --app-bg-elevated: #150822;
+    --surface-1: rgba(30, 15, 55, 0.75);
+    --surface-2: rgba(45, 25, 80, 0.5);
+    --surface-glass: rgba(192, 132, 252, 0.06);
+    --sidebar-bg: rgba(12, 5, 22, 0.92);
+    --topbar-bg: rgba(12, 5, 22, 0.78);
+    --text-primary: #faf5ff;
+    --text-secondary: #d8b4fe;
+    --text-tertiary: #a78bfa;
+    --heading-color: #f3e8ff;
+    --accent: #c084fc;
+    --accent-hover: #d8b4fe;
+    --accent-muted: rgba(192, 132, 252, 0.16);
+    --accent-foreground: #1e0533;
+    --accent-ring: rgba(192, 132, 252, 0.35);
+    --border-subtle: rgba(192, 132, 252, 0.15);
+    --border-strong: rgba(192, 132, 252, 0.28);
+    --sidebar-border: rgba(192, 132, 252, 0.1);
+    --nav-hover-bg: rgba(192, 132, 252, 0.1);
+    --nav-active-bg: rgba(192, 132, 252, 0.18);
+    --success: #4ade80;
+    --warning: #fbbf24;
+    --danger: #fb7185;
+    --chart-1: #c084fc;
+    --chart-2: #22d3ee;
+    --chart-3: #4ade80;
+    --chart-4: #fbbf24;
+    --chart-5: #fb7185;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 28px 56px rgba(0, 0, 0, 0.55);
+    --shadow-glow: 0 0 0 1px rgba(192, 132, 252, 0.15), 0 16px 48px rgba(124, 58, 237, 0.15);
+    --app-bg-mesh:
+        radial-gradient(ellipse 100% 70% at 10% -10%, rgba(192, 132, 252, 0.18), transparent 50%),
+        radial-gradient(ellipse 80% 50% at 90% 20%, rgba(34, 211, 238, 0.08), transparent 45%),
+        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(167, 139, 250, 0.1), transparent 50%);
+    --bg-color: var(--app-bg);
+    --card-color: var(--surface-1);
+    --text-color: var(--text-primary);
+    --text-muted: var(--text-secondary);
+    --primary-color: var(--accent);
+    --border-color: var(--border-subtle);
+    --hover-color: var(--nav-hover-bg);
+    --success-color: var(--success);
+    --warning-color: var(--warning);
+    --danger-color: var(--danger);
+    --navbar-bg: var(--topbar-bg);
+    --navbar-text: var(--text-primary);
+}
+
+/* ------------------------------------------------------------
+   TEMA RED
+   ------------------------------------------------------------ */
+body.theme-red {
+    --app-bg: #140505;
+    --app-bg-elevated: #1c0a0a;
+    --surface-1: rgba(45, 15, 15, 0.72);
+    --surface-2: rgba(60, 20, 20, 0.5);
+    --surface-glass: rgba(248, 113, 113, 0.06);
+    --sidebar-bg: rgba(12, 4, 4, 0.92);
+    --topbar-bg: rgba(12, 4, 4, 0.8);
+    --text-primary: #fff1f2;
+    --text-secondary: #fecdd3;
+    --text-tertiary: #fb7185;
+    --heading-color: #ffe4e6;
+    --accent: #fb7185;
+    --accent-hover: #fda4af;
+    --accent-muted: rgba(251, 113, 133, 0.16);
+    --accent-foreground: #450a0a;
+    --accent-ring: rgba(251, 113, 133, 0.35);
+    --border-subtle: rgba(251, 113, 133, 0.14);
+    --border-strong: rgba(251, 113, 133, 0.26);
+    --sidebar-border: rgba(251, 113, 133, 0.1);
+    --nav-hover-bg: rgba(251, 113, 133, 0.1);
+    --nav-active-bg: rgba(251, 113, 133, 0.18);
+    --success: #4ade80;
+    --warning: #fbbf24;
+    --danger: #ef4444;
+    --chart-1: #fb7185;
+    --chart-2: #fbbf24;
+    --chart-3: #4ade80;
+    --chart-4: #38bdf8;
+    --chart-5: #a78bfa;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 28px 56px rgba(0, 0, 0, 0.55);
+    --shadow-glow: 0 0 0 1px rgba(251, 113, 133, 0.12), 0 16px 40px rgba(239, 68, 68, 0.12);
+    --app-bg-mesh:
+        radial-gradient(ellipse 90% 60% at 0% 0%, rgba(251, 113, 133, 0.14), transparent 50%),
+        radial-gradient(ellipse 70% 50% at 100% 30%, rgba(239, 68, 68, 0.1), transparent 45%);
+    --bg-color: var(--app-bg);
+    --card-color: var(--surface-1);
+    --text-color: var(--text-primary);
+    --text-muted: var(--text-secondary);
+    --primary-color: var(--accent);
+    --border-color: var(--border-subtle);
+    --hover-color: var(--nav-hover-bg);
+    --success-color: var(--success);
+    --warning-color: var(--warning);
+    --danger-color: var(--danger);
+    --navbar-bg: var(--topbar-bg);
+    --navbar-text: var(--text-primary);
+}
+
+/* ------------------------------------------------------------
+   TEMA GRAY (slate premium)
+   ------------------------------------------------------------ */
+body.theme-gray {
+    --app-bg: #0c0f14;
+    --app-bg-elevated: #11151c;
+    --surface-1: rgba(30, 41, 59, 0.65);
+    --surface-2: rgba(51, 65, 85, 0.45);
+    --surface-glass: rgba(148, 163, 184, 0.05);
+    --sidebar-bg: rgba(10, 12, 16, 0.92);
+    --topbar-bg: rgba(10, 12, 16, 0.82);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-tertiary: #64748b;
+    --heading-color: #f1f5f9;
+    --accent: #94a3b8;
+    --accent-hover: #cbd5e1;
+    --accent-muted: rgba(148, 163, 184, 0.14);
+    --accent-foreground: #0f172a;
+    --accent-ring: rgba(148, 163, 184, 0.3);
+    --border-subtle: rgba(148, 163, 184, 0.12);
+    --border-strong: rgba(148, 163, 184, 0.22);
+    --sidebar-border: rgba(148, 163, 184, 0.08);
+    --nav-hover-bg: rgba(148, 163, 184, 0.08);
+    --nav-active-bg: rgba(148, 163, 184, 0.16);
+    --success: #4ade80;
+    --warning: #fbbf24;
+    --danger: #f87171;
+    --chart-1: #94a3b8;
+    --chart-2: #38bdf8;
+    --chart-3: #4ade80;
+    --chart-4: #fbbf24;
+    --chart-5: #c084fc;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+    --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 28px 56px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 0 1px rgba(148, 163, 184, 0.1), 0 16px 40px rgba(15, 23, 42, 0.35);
+    --app-bg-mesh:
+        radial-gradient(ellipse 100% 80% at 50% -20%, rgba(148, 163, 184, 0.08), transparent 50%),
+        radial-gradient(ellipse 60% 40% at 0% 100%, rgba(56, 189, 248, 0.05), transparent 45%);
+    --bg-color: var(--app-bg);
+    --card-color: var(--surface-1);
+    --text-color: var(--text-primary);
+    --text-muted: var(--text-secondary);
+    --primary-color: var(--accent);
+    --border-color: var(--border-subtle);
+    --hover-color: var(--nav-hover-bg);
+    --success-color: var(--success);
+    --warning-color: var(--warning);
+    --danger-color: var(--danger);
+    --navbar-bg: var(--topbar-bg);
+    --navbar-text: var(--text-primary);
+}
+
+/* Base aplicada a todos os temas */
+body {
+    font-family: var(--font-sans);
+    background-color: var(--app-bg);
+    background-image: var(--app-bg-mesh);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Páginas públicas sem mesh podem usar .public-page */
+body.public-page {
+    background-attachment: scroll;
+}

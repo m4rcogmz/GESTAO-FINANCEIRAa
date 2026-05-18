@@ -1,0 +1,137 @@
+/* ============================================================
+   Compatibilidade — classes legadas mapeadas para design tokens
+   (evita quebras em markup antigo: btn-neon, card-neon, etc.)
+   ============================================================ */
+
+:root {
+    --neon-blue: var(--accent);
+    --neon-cyan: var(--accent-hover);
+    --text-light: var(--text-primary);
+    --text-gray: var(--text-secondary);
+    --text-dark: var(--accent-foreground);
+    --glass-bg: var(--surface-glass);
+    --glass-border: var(--border-subtle);
+    --bg-dark-1: var(--app-bg);
+    --bg-dark-2: var(--surface-1);
+    --bg-dark-3: var(--surface-2);
+    --bg-dark-4: var(--surface-1);
+    --glow-blue: var(--shadow-glow);
+    --glow-cyan: var(--shadow-glow);
+}
+
+.btn-neon {
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: var(--accent-foreground);
+    font-weight: 600;
+    padding: 0.65rem 1.35rem;
+    border: none;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-fast), box-shadow var(--transition-base), filter var(--transition-fast);
+}
+
+.btn-neon:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    box-shadow: var(--shadow-glow);
+    color: var(--accent-foreground);
+}
+
+.btn-neon-outline {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--border-strong);
+    font-weight: 600;
+    padding: 0.65rem 1.35rem;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-neon-outline:hover {
+    background: var(--accent-muted);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.card-neon {
+    background: var(--surface-1);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card-neon:hover {
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-glow);
+}
+
+.card-neon h1, .card-neon h3, .card-neon h4, .card-neon h5 {
+    color: var(--heading-color);
+}
+
+.form-control-neon {
+    background: var(--surface-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    padding: 0.7rem 1rem;
+    width: 100%;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.form-control-neon:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-ring);
+    background: var(--surface-1);
+    color: var(--text-primary);
+}
+
+.form-control-neon::placeholder {
+    color: var(--text-tertiary);
+}
+
+.text-neon-blue,
+.text-neon-cyan {
+    color: var(--accent);
+}
+
+.navbar-neon {
+    /* Navbar antiga substituída pelo app-topbar; mantém estilos mínimos se usada em páginas legacy */
+    background: var(--topbar-bg) !important;
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.modal-neon .modal-content {
+    background: var(--surface-1);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-neon .modal-header {
+    border-bottom: 1px solid var(--border-subtle);
+    background: transparent;
+}
+
+.modal-neon .modal-title {
+    color: var(--heading-color);
+    font-weight: 700;
+}
+
+.modal-neon .modal-body {
+    color: var(--text-secondary);
+}
+
+body.theme-light .modal-neon .btn-close {
+    filter: none;
+}
+
+body:not(.theme-light) .modal-neon .btn-close {
+    filter: invert(1);
+    opacity: 0.7;
+}
